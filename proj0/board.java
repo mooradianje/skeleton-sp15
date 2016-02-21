@@ -1,17 +1,27 @@
-public class Board {
+public class board {
+
+
+	private int N;
+
+	public board(){
+		//setting size
+		N = 8;
+
+	}
 	
 	public static void main(String[] args){
 		//starts a gui version of the game
-	}
 
+	}
+/*
 	private Piece pieceAt(int x, int y) {
 		//gets the piece at position (x,y) on the board
 		//or null if there is no piece
 		// if x,y are out of bounds, returns null
 
 	}
-
-	private boolean canSelect(int x, int y) {
+*/
+//	private boolean canSelect(int x, int y) {
 		//returns true if the square at (x,y can be selected)
 
 		/** a square can be celected if it is the player's turn and:
@@ -24,7 +34,8 @@ public class Board {
 				selectd another valid caputure destination - during the 
 				multi-capture, you should only select the active piece 
 				once - all other slections must be valid destination points**/
-	}
+//	}
+/*
 	private void select(int x, int y){
 		//selects teh square at (x,y) - this method assumes canSelect(x,y)
 		//returns true -  optionally, it is recommended to color the 
@@ -59,4 +70,5 @@ public class Board {
 		// returns the winner of teh game - fire, water, no one, or null
 
 	}
+*/
 }
