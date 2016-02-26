@@ -1,27 +1,61 @@
 public class board {
 
 
-	private int N;
-
-	public board(){
+	private static int N;
+	// my thinking is to create a matrix of pieces (n by n) which is initialized
+	// with null values at first, then filled as pieces are placed 
+	// initial implementation will probably place pieces one by one using place()
+    private static Piece[][] pieceset;
+    private static Piece[] fireset;
+    private static Piece iceset;
+    private int piecetot = 0;  // total number of pieces on board
+    
+	public board(boolean shouldBeEmpty){
 		//setting size
 		N = 8;
+		shouldBeEmpty=shouldBeEmpty;
 
+	}
+	
+	// to be initialized at start of game
+	// draws the board itself
+	private static void drawBoard(){
+	    for (int i = 0; i < N; i += 1) {
+	        for (int j = 0; j < N; j +=1) {
+	            if (i + j % 2 == 0) {
+	                //set the color to red
+	            } else {
+	                //set the color to grey
+	            }
+	        }
+	        pieceset = new Piece[N][N];
+	    }
+	}
+	
+	//starts a standard version of the game
+	// 3 rows of pieces top n bottom
+	private static void newGameStd(){
+	    //12 pieces total - can't gain pieces in checkz
+	    //nevermind - going to go the manual route
+	    //fireset = new Piece[12];
+	    //waterset = new Piece[12];
+        wpawn1 = new 
+	    }
 	}
 	
 	public static void main(String[] args){
 		//starts a gui version of the game
 
 	}
-/*
+
 	private Piece pieceAt(int x, int y) {
 		//gets the piece at position (x,y) on the board
 		//or null if there is no piece
 		// if x,y are out of bounds, returns null
-
+        return null;
 	}
-*/
-//	private boolean canSelect(int x, int y) {
+
+	private boolean canSelect(int x, int y) {
 		//returns true if the square at (x,y can be selected)
 
 		/** a square can be celected if it is the player's turn and:
@@ -34,8 +68,9 @@ public class board {
 				selectd another valid caputure destination - during the 
 				multi-capture, you should only select the active piece 
 				once - all other slections must be valid destination points**/
-//	}
-/*
+		return true;
+	}
+
 	private void select(int x, int y){
 		//selects teh square at (x,y) - this method assumes canSelect(x,y)
 		//returns true -  optionally, it is recommended to color the 
@@ -53,11 +88,13 @@ public class board {
 		//executes a remove - returns the piece that was removed
 		// if the input is out of bounds, returns null and prints a message
 		// if no piece at x,y, returns null and prints a message
+		return null;
 	}
 
 	private boolean canEndTurn() {
 		//returns whether or not the player can end their turn
 		//must have moved of performed a capture
+		return true;
 
 	}
 
@@ -68,7 +105,7 @@ public class board {
 
 	private String winner() {
 		// returns the winner of teh game - fire, water, no one, or null
-
+        return null;
 	}
-*/
+
 }
