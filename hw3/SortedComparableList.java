@@ -12,17 +12,27 @@ public class SortedComparableList {
 
     /** A list with head HEAD0 and tail TAIL0. */
     public SortedComparableList(Comparable head0, SortedComparableList tail0) {
-        // REPLACE THIS LINE WITH YOUR SOLUTION
+        head = head0;
+        tail = tail0;
     }
 
     /** A list with null tail, and head = 0. */
     public SortedComparableList(){
-        // REPLACE THIS LINE WITH YOUR SOLUTION
+        head = 0;
+        tail = null;
     }
 
     /** Inserts Comparable c into its correct location in this list. */
     public void insert(Comparable c) {
-        // REPLACE THIS LINE WITH YOUR SOLUTION
+        //Comparable p = head;
+        //while (p.tail =! null) {
+        //    if (c.compareTo(p) > 0) {
+        //        p.tail.insert(c);
+        //    } else {
+        //        Comparable temp = p.tail;
+        //        
+        //    }
+        //}
     }
 
     /** Returns the i-th int in this list.
