@@ -4,36 +4,55 @@ import java.util.Formatter;
  * SortedComparableList.java
  * A list of Comparables in ascending order.
  */
-public class SortedComparableList {
+public class SortedComparableList{
     /** First element of list. */
     public Comparable head;
     /** Remaining elements of list. */
     public SortedComparableList tail;
+    public int size;
 
     /** A list with head HEAD0 and tail TAIL0. */
     public SortedComparableList(Comparable head0, SortedComparableList tail0) {
         head = head0;
         tail = tail0;
+        size=1;
     }
 
     /** A list with null tail, and head = 0. */
     public SortedComparableList(){
         head = 0;
         tail = null;
+        size=0;
     }
 
     /** Inserts Comparable c into its correct location in this list. */
     public void insert(Comparable c) {
-        //Comparable p = head;
-        //while (p.tail =! null) {
-        //    if (c.compareTo(p) > 0) {
-        //        p.tail.insert(c);
-        //    } else {
-        //        Comparable temp = p.tail;
-        //        
-        //    }
-        //}
+        //nonworking implementation:
+        
+        
+        Comparable p = head;
+        boolean inserted = false;
+        while (p.tail =! null) {
+            if (c.compareTo(p) > 0 && c.compareto(p.tail.head) < 0) {
+                //temp = p.head;
+                Comparable temp = p.tail.head;
+                p.tail = c;
+                c.tail = temp;
+                size = size + 1;
+                inserted = true;
+                return;
+            } else {
+                p = p.tail;
+            }
+        }
+        
+        p.tail = c;
+        size = size + 1;
+        return;
+        
+        
     }
+    
 
     /** Returns the i-th int in this list.
      *  The first element, which is in location 0, is the 0th element.
